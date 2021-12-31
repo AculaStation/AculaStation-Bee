@@ -1,23 +1,21 @@
 <h1 align="center">AculaStation 13 Codebase</h1>
 
-
 [![forthebadge](https://forthebadge.com/images/badges/built-with-resentment.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/contains-technical-debt.svg)](https://user-images.githubusercontent.com/8171642/50290880-ffef5500-043a-11e9-8270-a2e5b697c86c.png) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
 [![Build Status](https://github.com/AculaStation/AculaStation-Bee/workflows/Run%20tests/badge.svg)](https://github.com/AculaStation/AculaStation-Bee/actions?query=workflow%3A%22Run+tests%22)
 ![Open Issues](https://isitmaintained.com/badge/open/AculaStation/AculaStation-Bee.svg)
 
 **Website:** TBA
-**Wiki:** https://aculastation13.miraheze.org/wiki/Main_Page
-
+**Wiki:** <https://aculastation13.miraheze.org/wiki/Main_Page>
 
 ## DOWNLOADING
 
-There are a number of ways to download the source code. Some are described here, an alternative all-inclusive guide is also located at https://wiki.beestation13.com/view/Downloading_the_source_code
+There are a number of ways to download the source code. Some are described here, an alternative all-inclusive guide is also located at <https://wiki.beestation13.com/view/Downloading_the_source_code>
 
 Option 1:
-Follow this: https://wiki.beestation13.com/view/Setting_up_git
+Follow this: <https://wiki.beestation13.com/view/Setting_up_git>
 
 Option 2: Download the source code as a zip by clicking the ZIP button in the
-code tab of https://github.com/AculaStation/AculaStation-Bee
+code tab of <https://github.com/AculaStation/AculaStation-Bee>
 (note: this will use a lot of bandwidth if you wish to update and is a lot of
 hassle if you want to make any changes at all, so it's not recommended.)
 
@@ -39,8 +37,7 @@ You will find `BUILD.bat` in the root folder of Beestation, double-clicking it w
 
 If you see any errors or warnings, something has gone wrong - possibly a corrupt
 download or the files extracted wrong. If problems persist, ask for assistance
-in https://discord.gg/Vh8TJp9 or https://discord.gg/z9ttAvA
-
+in <https://discord.gg/Vh8TJp9> or <https://discord.gg/z9ttAvA>
 
 Once that's done, open up the config folder. You'll want to edit config.txt to
 set the probabilities for different gamemodes in Secret and to set your server
@@ -91,7 +88,7 @@ Hosting requires the [Microsoft Visual C++ 2015 Redistributable](https://www.mic
 `vc_redist.x86.exe`. *Not* the 64-bit version. There is a decent chance you already have it if you've installed a game on Steam.
 
 If you'd like a more robust server hosting option, check out tgstation's server tools suite at
-https://github.com/tgstation/tgstation-server
+<https://github.com/tgstation/tgstation-server>
 
 ## MAPS
 
@@ -102,10 +99,9 @@ BeeStation currently comes equipped with these maps.
 * [MetaStation](https://wiki.beestation13.com/view/MetaStation)
 * [PubbyStation](https://wiki.beestation13.com/view/PubbyStation)
 
-
 All maps have their own code file that is in the base of the _maps directory. Maps are loaded dynamically when the game starts. Follow this guideline when adding your own map, to your fork, for easy compatibility.
 
-The map that will be loaded for the upcoming round is determined by reading data/next_map.json, which is a copy of the json files found in the _maps tree. If this file does not exist, the default map from config/maps.txt will be loaded. Failing that, BoxStation will be loaded. If you want to set a specific map to load next round you can use the Change Map verb in game before restarting the server or copy a json from _maps to data/next_map.json before starting the server. Also, for debugging purposes, ticking a corresponding map's code file in Dream Maker will force that map to load every round.
+The map that will be loaded for the upcoming round is determined by reading data/next_map.json, which is a copy of the json files found in the_maps tree. If this file does not exist, the default map from config/maps.txt will be loaded. Failing that, BoxStation will be loaded. If you want to set a specific map to load next round you can use the Change Map verb in game before restarting the server or copy a json from _maps to data/next_map.json before starting the server. Also, for debugging purposes, ticking a corresponding map's code file in Dream Maker will force that map to load every round.
 
 If you are hosting a server, and want randomly picked maps to be played each round, you can enable map rotation in [config.txt](config/config.txt) and then set the maps to be picked in the [maps.txt](config/maps.txt) file.
 
@@ -121,9 +117,9 @@ To enable an away mission open `config/awaymissionconfig.txt` and uncomment one 
 
 ## SQL SETUP
 
-The SQL backend requires a Mariadb server running 10.2 or later. Mysql is not supported but Mariadb is a drop in replacement for mysql. SQL is required for the library, stats tracking, admin notes, and job-only bans, among other features, mostly related to server administration. Your server details go in /config/dbconfig.txt, and the SQL schema is in /SQL/beestation_schema.sql and /SQL/beestation_schema_prefix.sql depending on if you want table prefixes.  More detailed setup instructions are located here: https://wiki.beestation13.com/view/Downloading_the_source_code#Setting_up_the_database
+The SQL backend requires a Mariadb server running 10.2 or later. Mysql is not supported but Mariadb is a drop in replacement for mysql. SQL is required for the library, stats tracking, admin notes, and job-only bans, among other features, mostly related to server administration. Your server details go in /config/dbconfig.txt, and the SQL schema is in /SQL/beestation_schema.sql and /SQL/beestation_schema_prefix.sql depending on if you want table prefixes.  More detailed setup instructions are located here: <https://wiki.beestation13.com/view/Downloading_the_source_code#Setting_up_the_database>
 
-If you are hosting a testing server on windows you can use a standalone version of MariaDB pre load with a blank (but initialized) tgdb database. Find them here: https://tgstation13.download/database/ Just unzip and run for a working (but insecure) database server. Includes a zipped copy of the data folder for easy resetting back to square one.
+If you are hosting a testing server on windows you can use a standalone version of MariaDB pre load with a blank (but initialized) tgdb database. Find them here: <https://tgstation13.download/database/> Just unzip and run for a working (but insecure) database server. Includes a zipped copy of the data folder for easy resetting back to square one.
 
 ## WEB/CDN RESOURCE DELIVERY
 
@@ -131,8 +127,8 @@ Web delivery of game resources makes it quicker for players to join and reduces 
 
 1. Edit compile_options.dm to set the `PRELOAD_RSC` define to `0`
 1. Add a url to config/external_rsc_urls pointing to a .zip file containing the .rsc.
-    * If you keep up to date with BeeStation you could reuse our rsc cdn at http://rsc.beestation13.buzz/beestation.zip. Otherwise you can use cdn services like CDN77 or cloudflare (requires adding a page rule to enable caching of the zip), or roll your own cdn using route 53 and vps providers.
-	* Regardless even offloading the rsc to a website without a CDN will be a massive improvement over the in game system for transferring files.
+    * If you keep up to date with BeeStation you could reuse our rsc cdn at <http://rsc.beestation13.buzz/beestation.zip>. Otherwise you can use cdn services like CDN77 or cloudflare (requires adding a page rule to enable caching of the zip), or roll your own cdn using route 53 and vps providers.
+ * Regardless even offloading the rsc to a website without a CDN will be a massive improvement over the in game system for transferring files.
 
 ## IRC BOT SETUP
 
@@ -164,7 +160,8 @@ See the footers of code/\_\_DEFINES/server\_tools.dm, code/modules/server\_tools
 All assets including icons and sound are under a [Creative Commons 3.0 BY-SA license](https://creativecommons.org/licenses/by-sa/3.0/) unless otherwise indicated.
 
 # Other Codebase Credits
-- /tg/, for the codebase.
-- CEV Eris, for the PDA sprites
-- TGMC, for the custom keybinds base
-- Citadel, for their beautiful lighting
+
+* /tg/, for the codebase.
+* CEV Eris, for the PDA sprites
+* TGMC, for the custom keybinds base
+* Citadel, for their beautiful lighting
