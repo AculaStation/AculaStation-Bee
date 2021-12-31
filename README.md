@@ -1,3 +1,5 @@
+<p align="center">
+  <img src="https://i.imgur.com/IHpRZsp.png" alt="Aculastation Logo"/>
 <h1 align="center">AculaStation 13 Codebase</h1>
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-resentment.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/contains-technical-debt.svg)](https://user-images.githubusercontent.com/8171642/50290880-ffef5500-043a-11e9-8270-a2e5b697c86c.png) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
@@ -11,7 +13,6 @@
 ## CONTRIBUTING & SETUP
 
 Please see [CONTRIBUTING.md](.github/CONTRIBUTING.md)
-
 Please see [SETUP.md](.github/SETUP.md) for information on how to download, compile & setup the codebase
 
 ## LICENSE
@@ -40,3 +41,4 @@ All assets including icons and sound are under a [Creative Commons 3.0 BY-SA lic
 * CEV Eris, for the PDA sprites
 * TGMC, for the custom keybinds base
 * Citadel, for their beautiful lighting
+
