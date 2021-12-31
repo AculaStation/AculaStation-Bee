@@ -11,6 +11,7 @@
 ## CONTRIBUTING & SETUP
 
 Please see [CONTRIBUTING.md](.github/CONTRIBUTING.md)
+
 Please see [SETUP.md](.github/SETUP.md) for information on how to download, compile & setup the codebase
 
 ## LICENSE
