@@ -211,7 +211,7 @@
 		cyclelinkedairlock = null
 	if (!cyclelinkeddir)
 		return
-	var/limit = 15
+	var/limit = 21
 	var/turf/T = get_turf(src)
 	var/obj/machinery/door/airlock/FoundDoor
 	do
