@@ -4,4 +4,4 @@ about: Suggest an idea for this project
 
 ---
 
-Feature requests are handled in the repository, but you could also discuss your ideas on beestation discord or forums here: https://forums.beestation13.com/
+Feature requests are handled in the repository, but you could also discuss your ideas on the AculaStation discord found here: https://discord.gg/xkEBR2GtyC
