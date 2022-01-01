@@ -6,7 +6,7 @@ about: Create a report to help reproduce and fix the issue
 ## Round ID:
 
 <!--- **INCLUDE THE ROUND ID**
-If you discovered this issue from playing beestation hosted servers:-->
+If you discovered this issue from playing AculaStation hosted servers:-->
 
 ## Testmerges:
 
