@@ -211,7 +211,7 @@
 		cyclelinkedairlock = null
 	if (!cyclelinkeddir)
 		return
-	var/limit = 21
+	var/limit = 21 //Aculastation Change #3: Ups screensize to 21x15
 	var/turf/T = get_turf(src)
 	var/obj/machinery/door/airlock/FoundDoor
 	do

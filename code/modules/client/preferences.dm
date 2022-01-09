@@ -106,7 +106,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	var/list/ignoring = list()
 
-	var/clientfps = 60
+	var/clientfps = 60  //Aculastation Change #2: Makes the default framerate 60 FPS
 	var/updated_fps = 0
 
 	var/parallax
