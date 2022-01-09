@@ -16,7 +16,7 @@ REVIVAL_BRAIN_LIFE -1
 
 ## OOC DURING ROUND ###
 ## Comment this out if you want OOC to be automatically disabled during the round, it will be enabled during the lobby and after the round end results.
-#OOC_DURING_ROUND
+OOC_DURING_ROUND
 
 ## LOOC
 ## Comment this out to disable LOOC
@@ -192,7 +192,7 @@ MAX_POP TRAITORCHAN -1
 MIN_POP DOUBLE_AGENTS 25
 MAX_POP DOUBLE_AGENTS -1
 
-MIN_POP NUCLEAR 0
+MIN_POP NUCLEAR 10
 MAX_POP NUCLEAR -1
 
 MIN_POP REVOLUTION 20
@@ -359,7 +359,7 @@ MINIMAL_ACCESS_THRESHOLD 20
 #JOBS_HAVE_MINIMAL_ACCESS
 
 ## Uncomment to give assistants maint access.
-#ASSISTANTS_HAVE_MAINT_ACCESS
+ASSISTANTS_HAVE_MAINT_ACCESS
 
 ## Uncoment to give security maint access. Note that if you dectivate JOBS_HAVE_MINIMAL_ACCESS security already gets maint from that.
 SECURITY_HAS_MAINT_ACCESS
@@ -397,7 +397,7 @@ NEAR_DEATH_EXPERIENCE
 ## Set to 1 for "custom", silicons will start with the custom laws defined in silicon_laws.txt. (If silicon_laws.txt is empty, the AI will spawn with asimov and Custom boards will auto-delete.)
 ## Set to 2 for "random", silicons will start with a random lawset picked from random laws specified below.
 ## Set to 3 for "weighted random", using values in "silicon_weights.txt", a law will be selected, with weights specifed in that file.
-DEFAULT_LAWS 2
+DEFAULT_LAWS 0
 
 ## RANDOM LAWS ##
 ## ------------------------------------------------------------------------------------------
@@ -535,7 +535,7 @@ OVERFLOW_CAP -1
 #STARLIGHT
 
 ## Uncomment to bring back old grey suit assistants instead of the now default rainbow colored assistants.
-GREY_ASSISTANTS
+#GREY_ASSISTANTS
 
 ## Midround Antag (aka Mulligan antag) config options ###
 
@@ -574,10 +574,10 @@ BOMBCAP 24
 ## a less lootfilled or smaller or less round effecting ruin costs less to
 ## spawn, while the converse is true. Alter this number to affect the amount
 ## of ruins.
-LAVALAND_BUDGET 60
+LAVALAND_BUDGET 70
 
 ## Space Ruin Budged
-Space_Budget 8
+Space_Budget 10
 
 ## Time in ds from when a player latejoins till the arrival shuttle docks at the station
 ## Must be at least 30. At least 55 recommended to be visually/aurally appropriate
@@ -591,7 +591,7 @@ ARRIVALS_SHUTTLE_DOCK_WINDOW 55
 
 ## How many wirechewing rodents you want to spawn on exposed maintenane wires at the start of the round. You may wish to set this to 0 if you're testing powernets.
 
-MICE_ROUNDSTART 10
+MICE_ROUNDSTART 5
 
 ## If the percentage of players alive (doesn't count conversions) drops below this threshold the emergency shuttle will be forcefully called (provided it can be)
 #EMERGENCY_SHUTTLE_AUTOCALL_THRESHOLD 0.2
@@ -607,7 +607,7 @@ ROUNDSTART_TRAITS
 #DISABLE_HUMAN_MOOD
 
 ## Enable night shifts ##
-ENABLE_NIGHT_SHIFTS
+#ENABLE_NIGHT_SHIFTS
 
 ## Enable randomized shift start times##
 RANDOMIZE_SHIFT_TIME
@@ -619,9 +619,9 @@ RANDOMIZE_SHIFT_TIME
 ALLOW_CREW_OBJECTIVES
 
 ## Mob spam prevention. The number of each mobtype that can be alive at once. Stops people from crashing the server with chickens/monkeycubes/slimes. Altering these values is recommended based on server hardware.
-MAX_CUBE_MONKEYS 100
-MAX_CHICKENS 100
-MAX_SLIMES 100
+MAX_CUBE_MONKEYS 50
+MAX_CHICKENS 50
+MAX_SLIMES 50
 
 ## Max amount of bodies allowed to slimepeople. Has balance considerations as well as technical ones.
 MAX_SLIMEPERSON_BODIES 10
