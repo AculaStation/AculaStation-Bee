@@ -85,6 +85,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/skin_tone = "caucasian1"		//Skin color
 	var/eye_color = "000"				//Eye color
 	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
+	var/examine_text //ACULASTATION EDIT - EXAMINE TEXT	
 	var/list/features = list("mcolor" = "FFF", "ethcolor" = "9c3030", "tail_lizard" = "Smooth",
 							"tail_human" = "None", "snout" = "Round", "horns" = "None",
 							"ears" = "None", "wings" = "None", "frills" = "None", "spines" = "None",
@@ -222,6 +223,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			dat += "<b>Name:</b> "
 			dat += "<a href='?_src_=prefs;preference=name;task=input'>[real_name]</a><BR>"
+
+			//ACULASTATION EDIT START - EXAMINE TEXT
+			dat += "<b>Examine Text:</b> "
+			dat += "<a href='?_src_=prefs;preference=examine_text;task=input'>[examine_text ? examine_text : "(none)"]</a><BR>"
+			//ACULASTATION EDIT END
 
 			if(!(AGENDER in pref_species.species_traits))
 				dat += "<b>Gender:</b> <a href='?_src_=prefs;preference=gender'>[gender == MALE ? "Male" : "Female"]</a><BR>"
@@ -1288,6 +1294,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			switch(href_list["preference"])
 				if("name")
 					real_name = pref_species.random_name(gender,1)
+				//ACULASTATION EDIT START - EXAMINE TEXT
+				if("examine_text")
+					examine_text = null
+				//ACULASTATION EDIT END
 				if("age")
 					age = rand(AGE_MIN, AGE_MAX)
 				if("hair")
@@ -1363,7 +1373,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						real_name = new_name
 					else
 						to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and .</font>")
-
+				//ACULASTATION EDIT START - EXAMINE TEXT
+				if("examine_text")
+					var/new_text = input(user, "Please enter new examine text: (You can +bold+, |italicize|, and _underline_ things too!)", "Character Preference") as text|null
+					if(!new_text)
+						return
+					if(length(new_text) > MAX_EXAMINE_LEN)
+						alert("Your examine text is too long. It must be no more than [MAX_EXAMINE_LEN] characters long. The current text will be trimmed down to meet the limit.")
+						new_text = copytext(new_text, 1, MAX_EXAMINE_LEN+1) //Len+1 because of byond's `copytext` jank
+					new_text = html_encode(new_text)
+					examine_text = say_emphasis(new_text)
+				//ACULASTATION EDIT END
 				if("age")
 					var/new_age = input(user, "Choose your character's age:\n([AGE_MIN]-[AGE_MAX])", "Character Preference") as num|null
 					if(new_age)
@@ -1963,6 +1983,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	character.real_name = real_name
 	character.name = character.real_name
+
+	character.examine_text = examine_text //ACULASTATION EDIT - EXAMINE TEXT
 
 	character.gender = gender
 	character.age = age
