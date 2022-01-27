@@ -1040,10 +1040,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	H.visible_message("<span class='notice'>[H] start putting on [I].</span>", "<span class='notice'>You start putting on [I].</span>")
 	return do_after(H, I.equip_delay_self, target = H)
 
-/datum/species/proc/before_equip_job(datum/job/J, mob/living/carbon/human/H, client/preference_source = null)
+/datum/species/proc/before_equip_job(datum/job/J, mob/living/carbon/human/H)
 	return
 
-/datum/species/proc/after_equip_job(datum/job/J, mob/living/carbon/human/H, client/preference_source = null)
+/datum/species/proc/after_equip_job(datum/job/J, mob/living/carbon/human/H)
 	H.update_mutant_bodyparts()
 
 // Do species-specific reagent handling here

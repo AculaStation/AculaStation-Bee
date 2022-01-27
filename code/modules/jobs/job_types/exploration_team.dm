@@ -22,7 +22,6 @@
 
 	display_order = JOB_DISPLAY_ORDER_EXPLORATION
 	departments = DEPARTMENT_SCIENCE
-	rpg_title = "Sailor"
 
 	species_outfits = list(
 		SPECIES_PLASMAMAN = /datum/outfit/plasmaman/exploration

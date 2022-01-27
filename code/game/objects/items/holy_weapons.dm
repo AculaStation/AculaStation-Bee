@@ -176,7 +176,6 @@
 	icon_state = "graverobber_under"
 	item_state = "graverobber_under"
 	item_color = "graverobber_under"
-	can_adjust = FALSE
 
 /obj/item/storage/box/holy/adept
 	name = "Divine Adept Kit"

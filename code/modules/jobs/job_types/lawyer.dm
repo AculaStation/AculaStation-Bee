@@ -21,10 +21,9 @@
 
 	display_order = JOB_DISPLAY_ORDER_LAWYER
 	departments = DEPARTMENT_SERVICE
-	rpg_title = "Magistrate"
 
 	species_outfits = list(
-		SPECIES_PLASMAMAN = /datum/outfit/plasmaman/lawyer
+		SPECIES_PLASMAMAN = /datum/outfit/plasmaman //they dont have one.
 	)
 
 /datum/outfit/job/lawyer

@@ -79,10 +79,6 @@
 	///A dictionary of species IDs and a path to the outfit.
 	var/list/species_outfits = null
 
-	///RPG job names, for the memes
-	var/rpg_title
-
-
 /datum/job/New()
 	. = ..()
 	say_span = replacetext(lowertext(title), " ", "")
@@ -200,7 +196,7 @@
 
 	//Equip the rest of the gear
 	H.dna.species.before_equip_job(src, H, visualsOnly)
-
+	
 	if(src.species_outfits)
 		if(H.dna.species.id in src.species_outfits)
 			var/datum/outfit/O = species_outfits[H.dna.species.id]
@@ -209,7 +205,7 @@
 	if(outfit_override || outfit)
 		H.equipOutfit(outfit_override ? outfit_override : outfit, visualsOnly)
 
-	H.dna.species.after_equip_job(src, H, visualsOnly, preference_source)
+	H.dna.species.after_equip_job(src, H, visualsOnly)
 
 	if(!visualsOnly && announce)
 		announce(H)

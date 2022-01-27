@@ -177,7 +177,6 @@
 	item_state = "bl_suit"
 	item_color = "black_suit_fem_skirt"
 	fitted = FEMALE_UNIFORM_TOP
-	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/civilian/lawyer/red
 	name = "lawyer red suit"

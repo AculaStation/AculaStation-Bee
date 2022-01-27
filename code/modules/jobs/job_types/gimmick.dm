@@ -18,7 +18,6 @@
 
 	display_order = JOB_DISPLAY_ORDER_ASSISTANT
 	departments = DEPARTMENT_SERVICE
-	rpg_title = "Peasant"
 
 	allow_bureaucratic_error = FALSE
 	outfit = /datum/outfit/job/gimmick

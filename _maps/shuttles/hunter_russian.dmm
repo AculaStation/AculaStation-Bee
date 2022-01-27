@@ -13,8 +13,8 @@
 /area/shuttle/hunter)
 "d" = (
 /obj/structure/shuttle/engine/heater{
-	dir = 8;
-	icon_state = "heater"
+	icon_state = "heater";
+	dir = 8
 	},
 /obj/structure/window/reinforced{
 	dir = 4
@@ -31,6 +31,15 @@
 /area/shuttle/hunter)
 "g" = (
 /turf/open/floor/plating,
+/area/shuttle/hunter)
+"h" = (
+/obj/machinery/door/airlock/security/glass,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/hunter)
+"i" = (
+/obj/machinery/door/airlock/security/glass,
+/obj/structure/fans/tiny,
+/turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/hunter)
 "j" = (
 /obj/effect/turf_decal/bot,
@@ -74,8 +83,8 @@
 /area/shuttle/hunter)
 "r" = (
 /obj/effect/turf_decal/arrows{
-	dir = 4;
-	icon_state = "arrows"
+	icon_state = "arrows";
+	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/hunter)
@@ -115,8 +124,8 @@
 /area/shuttle/hunter)
 "z" = (
 /obj/structure/chair{
-	dir = 4;
-	icon_state = "chair"
+	icon_state = "chair";
+	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/hunter)
@@ -175,16 +184,8 @@
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/hunter)
-"L" = (
-/obj/effect/mob_spawn/human/fugitive/russian{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/shuttle/hunter)
-"M" = (
-/obj/machinery/door/airlock/security/glass{
-	req_access_txt = "181"
-	},
+"K" = (
+/obj/machinery/door/airlock/security/glass,
 /obj/structure/fans/tiny,
 /obj/docking_port/stationary{
 	dir = 1;
@@ -207,6 +208,12 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/hunter)
+"L" = (
+/obj/effect/mob_spawn/human/fugitive/russian{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/shuttle/hunter)
 "N" = (
 /obj/machinery/suit_storage_unit/standard_unit,
 /obj/effect/turf_decal/stripes/line{
@@ -214,21 +221,8 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/hunter)
-"O" = (
-/obj/machinery/door/airlock/security/glass{
-	req_access_txt = "181"
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/hunter)
 "Q" = (
 /obj/item/book/manual/ripley_build_and_repair,
-/turf/open/floor/mineral/plastitanium/red,
-/area/shuttle/hunter)
-"X" = (
-/obj/structure/fans/tiny,
-/obj/machinery/door/airlock/security/glass{
-	req_access_txt = "181"
-	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/hunter)
 "Y" = (
@@ -330,7 +324,7 @@ b
 b
 e
 g
-O
+h
 k
 k
 k
@@ -339,7 +333,7 @@ k
 D
 k
 k
-O
+h
 g
 L
 b
@@ -368,12 +362,12 @@ b
 b
 b
 b
-O
+h
 b
 b
 b
 b
-O
+h
 b
 b
 b
@@ -402,7 +396,7 @@ a
 a
 a
 a
-X
+i
 k
 k
 v
@@ -411,7 +405,7 @@ y
 v
 k
 k
-M
+K
 a
 a
 a
@@ -440,12 +434,12 @@ a
 a
 b
 b
-O
+h
 b
 b
 b
 b
-O
+h
 b
 b
 a

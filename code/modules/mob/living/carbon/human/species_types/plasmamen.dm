@@ -60,20 +60,10 @@
 		no_protection = TRUE
 	. = ..()
 
-/datum/species/plasmaman/after_equip_job(datum/job/J, mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source = null)
+/datum/species/plasmaman/after_equip_job(datum/job/J, mob/living/carbon/human/H, visualsOnly = FALSE)
 	H.internal = H.get_item_for_held_index(2)
 	H.update_internals_hud_icon(1)
-
-	if(!preference_source)
-		return
-	var/path = J.species_outfits[SPECIES_PLASMAMAN]
-	var/datum/outfit/plasmaman/O = new path
-	var/datum/preferences/prefs = preference_source.prefs
-	if(prefs.helmet_style != HELMET_DEFAULT)
-		if(O.helmet_variants[prefs.helmet_style])
-			var/helmet = O.helmet_variants[prefs.helmet_style]
-			qdel(H.head)
-			H.equip_to_slot(new helmet, ITEM_SLOT_HEAD)
+	return FALSE
 
 /datum/species/plasmaman/qualifies_for_rank(rank, list/features)
 	if(rank in GLOB.security_positions)

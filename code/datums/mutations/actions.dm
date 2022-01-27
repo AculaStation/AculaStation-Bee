@@ -146,7 +146,11 @@
 	if(!istype(P, /obj/item/projectile/magic/aoe/fireball))
 		return
 	var/obj/item/projectile/magic/aoe/fireball/F = P
-	F.exp_light = strength-1
+	switch(strength)
+		if(1 to 3)
+			F.exp_light = strength-1
+		if(4 to INFINITY)
+			F.exp_heavy = strength-3
 	F.exp_fire += strength
 
 /obj/item/projectile/magic/aoe/fireball/firebreath

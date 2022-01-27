@@ -5,8 +5,9 @@
 	if(src.check_access(null))
 		return TRUE
 	if(issilicon(M))
-		var/mob/living/silicon/S = M
-		return check_access(S.internal_id_card)	//AI can do whatever it wants
+		if(ispAI(M))
+			return FALSE
+		return TRUE	//AI can do whatever it wants
 	if(IsAdminGhost(M))
 		//Access can't stop the abuse
 		return TRUE

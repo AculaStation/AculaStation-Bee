@@ -191,14 +191,17 @@
 
 /obj/effect/proc_holder/spell/targeted/eminence/servant_warp/cast(list/targets, mob/user)
 	//Get a list of all servants
-	var/datum/mind/choice = input(user, "Select servant", "Warp to...", null) in GLOB.all_servants_of_ratvar
-	var/mob/living/M
+	var/choice = input(user, "Select servant", "Warp to...", null) in GLOB.all_servants_of_ratvar
 	if(!choice)
 		return
-	M = choice.current
-	if(!isliving(M))
+	for(var/mob/living/L in GLOB.all_servants_of_ratvar)
+		if(L.name == choice)
+			choice = L
+			break
+	if(!isliving(choice))
 		to_chat(user, "<span class='warning'>You cannot jump to them!</span>")
 		return
+	var/mob/living/M = choice
 	if(!is_servant_of_ratvar(M))
 		to_chat(user, "<span class='warning'>They are no longer a servant of Rat'var!</span>")
 		return
@@ -290,6 +293,8 @@
 		"Processor Overload",
 		"Radiation Storm"
 	)
+	if(!can_cast(user))
+		return
 	if(!picked_event)
 		revert_cast(user)
 		return

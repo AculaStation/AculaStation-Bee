@@ -185,14 +185,6 @@
 	time = 40
 	category = CAT_ROBOT
 
-/datum/crafting_recipe/cleanbot/larry
-	name = "Larry"
-	result = /mob/living/simple_animal/bot/cleanbot/larry
-	reqs = list(/obj/item/larryframe = 1,
-				/obj/item/assembly/prox_sensor = 1,
-				/obj/item/bodypart/r_arm/robot = 1)
-
-
 /datum/crafting_recipe/floorbot
 	name = "Floorbot"
 	result = /mob/living/simple_animal/bot/floorbot

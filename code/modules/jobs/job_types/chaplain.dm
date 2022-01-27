@@ -20,7 +20,6 @@
 
 	display_order = JOB_DISPLAY_ORDER_CHAPLAIN
 	departments = DEPARTMENT_SERVICE
-	rpg_title = "Paladin"
 
 	species_outfits = list(
 		SPECIES_PLASMAMAN = /datum/outfit/plasmaman/chaplain

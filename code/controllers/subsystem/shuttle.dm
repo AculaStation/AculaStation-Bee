@@ -173,26 +173,31 @@ SUBSYSTEM_DEF(shuttle)
 			return S
 	WARNING("couldn't find dock with id: [id]")
 
-/// Check if we can call the evac shuttle.
-/// Returns TRUE if we can. Otherwise, returns a string detailing the problem.
 /datum/controller/subsystem/shuttle/proc/canEvac(mob/user)
 	var/srd = CONFIG_GET(number/shuttle_refuel_delay)
 	if(world.time - SSticker.round_start_time < srd)
-		return "The emergency shuttle is refueling. Please wait [DisplayTimeText(srd - (world.time - SSticker.round_start_time))] before attempting to call."
+		to_chat(user, "<span class='alert'>The emergency shuttle is refueling. Please wait [DisplayTimeText(srd - (world.time - SSticker.round_start_time))] before trying again.</span>")
+		return FALSE
 
 	switch(emergency.mode)
 		if(SHUTTLE_RECALL)
-			return "The emergency shuttle may not be called while returning to CentCom."
+			to_chat(user, "<span class='alert'>The emergency shuttle may not be called while returning to CentCom.</span>")
+			return FALSE
 		if(SHUTTLE_CALL)
-			return "The emergency shuttle is already on its way."
+			to_chat(user, "<span class='alert'>The emergency shuttle is already on its way.</span>")
+			return FALSE
 		if(SHUTTLE_DOCKED)
-			return "The emergency shuttle is already here."
+			to_chat(user, "<span class='alert'>The emergency shuttle is already here.</span>")
+			return FALSE
 		if(SHUTTLE_IGNITING)
-			return "The emergency shuttle is firing its engines to leave."
+			to_chat(user, "<span class='alert'>The emergency shuttle is firing its engines to leave.</span>")
+			return FALSE
 		if(SHUTTLE_ESCAPE)
-			return "The emergency shuttle is moving away to a safe distance."
+			to_chat(user, "<span class='alert'>The emergency shuttle is moving away to a safe distance.</span>")
+			return FALSE
 		if(SHUTTLE_STRANDED)
-			return "The emergency shuttle has been disabled by CentCom."
+			to_chat(user, "<span class='alert'>The emergency shuttle has been disabled by CentCom.</span>")
+			return FALSE
 
 	return TRUE
 
@@ -210,9 +215,7 @@ SUBSYSTEM_DEF(shuttle)
 			Good luck.")
 		emergency = backup_shuttle
 
-	var/can_evac_or_fail_reason = SSshuttle.canEvac(user)
-	if(can_evac_or_fail_reason != TRUE)
-		to_chat(user, "<span class='alert'>[can_evac_or_fail_reason]</span>")
+	if(!canEvac(user))
 		return
 
 	call_reason = trim(html_encode(call_reason))

@@ -19,7 +19,6 @@
 
 	display_order = JOB_DISPLAY_ORDER_CLOWN
 	departments = DEPARTMENT_SERVICE
-	rpg_title = "Jester"
 
 	species_outfits = list(
 		SPECIES_PLASMAMAN = /datum/outfit/plasmaman/honk

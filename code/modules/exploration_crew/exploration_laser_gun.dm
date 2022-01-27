@@ -29,10 +29,11 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
 
-/obj/item/projectile/beam/laser/anti_creature/prehit_pierce(atom/target)
-    if(!iscarbon(target) && !issilicon(target))
-        damage = 30
-    return ..()
+/obj/item/projectile/beam/laser/anti_creature/on_hit(atom/target, blocked)
+	damage = initial(damage)
+	if(!iscarbon(target) && !issilicon(target))
+		damage = 30
+	. = ..()
 
 //Cutting projectile - Damage against objects
 

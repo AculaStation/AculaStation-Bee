@@ -1,5 +1,3 @@
-#define MOTION_SENSOR_MINIMUM_ALPHA 200
-
 /obj/machinery/camera
 
 	var/list/datum/weakref/localMotionTargets = list()
@@ -74,8 +72,7 @@
 /obj/machinery/camera/HasProximity(atom/movable/AM as mob|obj)
 	// Motion cameras outside of an "ai monitored" area will use this to detect stuff.
 	if (!area_motion)
-		//Target must be living and visible enough to the camera
-		if(isliving(AM) && AM.invisibility <= SEE_INVISIBLE_LIVING && AM.alpha >= MOTION_SENSOR_MINIMUM_ALPHA)
+		if(isliving(AM))
 			newTarget(AM)
 
 /obj/machinery/camera/motion/thunderdome
@@ -112,5 +109,3 @@
 		detectTime = 0
 		for(var/obj/machinery/computer/security/telescreen/entertainment/TV in GLOB.machines)
 			TV.notify(FALSE)
-
-#undef MOTION_SENSOR_MINIMUM_ALPHA

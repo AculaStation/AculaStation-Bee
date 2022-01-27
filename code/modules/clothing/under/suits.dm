@@ -80,7 +80,6 @@
 	icon_state = "red_suit"
 	item_state = "r_suit"
 	item_color = "red_suit"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/suit/charcoal
 	name = "charcoal suit"
@@ -88,7 +87,6 @@
 	icon_state = "charcoal_suit"
 	item_state = "charcoal_suit"
 	item_color = "charcoal_suit"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/suit/navy
 	name = "navy suit"
@@ -96,7 +94,6 @@
 	icon_state = "navy_suit"
 	item_state = "navy_suit"
 	item_color = "navy_suit"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/suit/burgundy
 	name = "burgundy suit"
@@ -104,7 +101,6 @@
 	icon_state = "burgundy_suit"
 	item_state = "burgundy_suit"
 	item_color = "burgundy_suit"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/suit/checkered
 	name = "checkered suit"
@@ -112,7 +108,6 @@
 	icon_state = "checkered_suit"
 	item_state = "checkered_suit"
 	item_color = "checkered_suit"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/suit/tan
 	name = "tan suit"
@@ -120,7 +115,6 @@
 	icon_state = "tan_suit"
 	item_state = "tan_suit"
 	item_color = "tan_suit"
-	can_adjust = FALSE
 
 /obj/item/clothing/under/suit/white
 	name = "white suit"
@@ -128,4 +122,3 @@
 	icon_state = "white_suit"
 	item_state = "white_suit"
 	item_color = "white_suit"
-	can_adjust = FALSE

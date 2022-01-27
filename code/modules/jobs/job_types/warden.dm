@@ -25,7 +25,6 @@
 
 	display_order = JOB_DISPLAY_ORDER_WARDEN
 	departments = DEPARTMENT_SECURITY
-	rpg_title = "Jailor"
 
 	species_outfits = list(
 		SPECIES_PLASMAMAN = /datum/outfit/plasmaman/warden
