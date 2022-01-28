@@ -786,9 +786,15 @@ GLOBAL_LIST_EMPTY(vending_products)
 			if(icon_vend) //Show the vending animation if needed
 				flick(icon_vend,src)
 			playsound(src, 'sound/machines/machine_vend.ogg', 50, TRUE, extrarange = -3)
-			new R.product_path(get_turf(src))
+			/// ACULASTATION CHANGES START
+			var/obj/item/vended_item = new R.product_path(get_turf(src))
 			R.amount--
-			. = TRUE
+			if(usr.CanReach(src) && usr.put_in_hands(vended_item))
+				to_chat(usr, "<span class='notice'>You take [R.name] out of the slot.</span>")
+			else
+				vended_item.forceMove(drop_location())
+				to_chat(usr, "<span class='warning'>[R.name] falls onto the floor!</span>")
+			/// ACULASTATION CHANGES END
 			SSblackbox.record_feedback("nested tally", "vending_machine_usage", 1, list("[type]", "[R.product_path]"))
 			vend_ready = TRUE
 
