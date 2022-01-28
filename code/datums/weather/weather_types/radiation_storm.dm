@@ -27,7 +27,7 @@
 /datum/weather/rad_storm/telegraph()
 	..()
 	status_alarm(TRUE)
-
+	make_maint_all_access() //ACULASTATION CHANGE
 
 /datum/weather/rad_storm/weather_act(mob/living/L)
 	var/resist = L.getarmor(null, "rad")
@@ -50,6 +50,7 @@
 		return
 	priority_announce("The radiation threat has passed. Please return to your workplaces.", "Anomaly Alert", SSstation.announcer.get_rand_alert_sound())
 	status_alarm(FALSE)
+	revoke_maint_all_access() //ACULASTATION CHANGE
 
 /datum/weather/rad_storm/proc/status_alarm(active)	//Makes the status displays show the radiation warning for those who missed the announcement.
 	var/datum/radio_frequency/frequency = SSradio.return_frequency(FREQ_STATUS_DISPLAYS)
