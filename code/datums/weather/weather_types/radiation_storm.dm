@@ -23,11 +23,18 @@
 	target_trait = ZTRAIT_STATION
 
 	immunity_type = "rad"
+	var/manual_emergency = FALSE
 
 /datum/weather/rad_storm/telegraph()
 	..()
 	status_alarm(TRUE)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/make_maint_all_access), 5 SECONDS) //ACULASTATION CHANGE: Automatically enable emergency maint access during radstorm.
+	//ACULASTATION CHANGES START: Automatically enable emergency maint access during radstorm.
+	if(!GLOB.emergency_access)
+		addtimer(CALLBACK(GLOBAL_PROC, .proc/make_maint_all_access), 5 SECONDS)
+	else
+		manual_emergency = TRUE
+	//ACULASTATION CHANGES END
+	
 
 /datum/weather/rad_storm/weather_act(mob/living/L)
 	var/resist = L.getarmor(null, "rad")
@@ -50,7 +57,12 @@
 		return
 	priority_announce("The radiation threat has passed. Please return to your workplaces.", "Anomaly Alert", SSstation.announcer.get_rand_alert_sound())
 	status_alarm(FALSE)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/revoke_maint_all_access), 1 MINUTES) //ACULASTATION CHANGE: Automatically enable emergency maint access during radstorm.
+	//ACULASTATION CHANGES START: Automatically enable emergency maint access during radstorm.
+	if(!manual_emergency)
+		addtimer(CALLBACK(GLOBAL_PROC, .proc/revoke_maint_all_access), 1 MINUTES)
+	else
+		return ..()
+	//ACULASTATION CHANGES END
 
 /datum/weather/rad_storm/proc/status_alarm(active)	//Makes the status displays show the radiation warning for those who missed the announcement.
 	var/datum/radio_frequency/frequency = SSradio.return_frequency(FREQ_STATUS_DISPLAYS)
