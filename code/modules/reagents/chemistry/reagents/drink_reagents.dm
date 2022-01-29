@@ -763,7 +763,7 @@
 /datum/reagent/consumable/triple_citrus
 	name = "Triple Citrus"
 	description = "A solution."
-	color = "#C8A5DC"
+	color = "#EEFF00" //ACULASTATION CHANGE
 	quality = DRINK_NICE
 	taste_description = "extreme bitterness"
 	glass_icon_state = "triplecitrus" //needs own sprite mine are trash
