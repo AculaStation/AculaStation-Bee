@@ -303,7 +303,7 @@
 		revert_cast(user)
 		return
 	if(picked_event == "Anomaly")
-		picked_event = pick("Anomaly: Energetic Flux", "Anomaly: Pyroclastic", "Anomaly: Gravitational", "Anomaly: Bluespace")
+		picked_event = pick("Anomaly: Energetic Flux", "Anomaly: Gravitational", "Anomaly: Bluespace") // Aculastation Change: Disables pyroclastic anomaly
 	//Reschedule events
 	//Get the picked event
 	for(var/datum/round_event_control/E in SSevents.control)
