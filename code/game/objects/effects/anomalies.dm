@@ -276,7 +276,6 @@
 							qdel(blueeffect)
 
 /////////////////////
-/* Aculastation Change START: Disables pyroclastic anomaly
 
 /obj/effect/anomaly/pyro
 	name = "pyroclastic anomaly"
@@ -314,7 +313,6 @@
 	S.flavor_text = FLAVOR_TEXT_EVIL
 	S.set_playable()
 
-Aculastation Change END */
 /////////////////////
 
 /obj/effect/anomaly/bhole
